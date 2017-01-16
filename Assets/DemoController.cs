@@ -21,6 +21,8 @@ public class DemoController : MonoBehaviour {
 
 	public void TimezoneDataReady() {
 		waitWindow.SetActive (false);
+
+		FindLocation ();
 	}
 
 	public void FindLocation() {
@@ -50,9 +52,13 @@ public class DemoController : MonoBehaviour {
 		if (tzId != "") {
 			results.text = tzId;
 			status.text = "";
+			Debug.Log (tzId);
 		} else {
 			status.text = "Unable to get timezone Id!";
+			Debug.Log (status.text);
 		}
+
+
 
 	}
 }

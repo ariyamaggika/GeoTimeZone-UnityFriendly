@@ -194,7 +194,7 @@ namespace GeoTimeZone
 
 		void LoadDataThread() {
 			tzlData = new List<string> (System.IO.File.ReadAllLines (tzlPath));
-			tzReader = new TimezoneFileReader(new MemoryStream (System.IO.File.ReadAllBytes (tzPath)));
+			tzReader = new TimezoneFileReader(System.IO.File.ReadAllBytes (tzPath));
 
 
 			dataIsReady = true;

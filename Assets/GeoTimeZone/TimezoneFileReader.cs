@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Text;
+using UnityEngine;
 
 namespace GeoTimeZone
 {
@@ -14,8 +15,9 @@ namespace GeoTimeZone
 
 		private static readonly object Locker = new object();
 
-		public TimezoneFileReader(MemoryStream _ms) {
-			ms = _ms;
+		public TimezoneFileReader(byte[] data) {
+			Debug.LogFormat ("DataLen: {0}", data.Length);
+			ms = new MemoryStream(data);
 		}
 
         private long GetCount()
